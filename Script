@@ -50,7 +50,7 @@ Android:Button("Bloxy Cola Pack",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("BloxyPack"):FireServer(1)
 end)
 
-Android:Button("Lolipop",function()
+Android:Button("Lollipop",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Lollipop")
 end)
 
