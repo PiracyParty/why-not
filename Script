@@ -51,7 +51,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("
 end)
 
 Android:Button("Lolipop",function()
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Lollipop
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Lollipop")
 end)
 
 local Android = library:CreateSection("Troll");
@@ -106,4 +106,3 @@ Android:Button("Size Switcher (Run in Lobby)",function()
 while wait() do game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("MakeRole"):FireServer(nil, false, false) task.wait(0.35) game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("MakeRole"):FireServer("Chips", true, false) end
 end)
 library:Ready();
-
