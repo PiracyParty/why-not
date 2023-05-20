@@ -30,7 +30,7 @@ Android:Button("Small Pizza",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Pizza1")
 end)
 
-Android:Button("Medium Pizza,function()
+Android:Button("Medium Pizza",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Pizza2")
 end)
 
