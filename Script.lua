@@ -1,50 +1,52 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PiracyParty/why-not/main/GUI.lua"))();
 local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local lp = Players.LocalPlayer
 local Android = library:CreateSection("Items");
+local remotes = ReplicatedStorage:WaitForChild("RemoteEvents")
 
 Android:Button("Weapon",function()
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("BasementWeapon"):FireServer(false)
+remotes:WaitForChild("BasementWeapon"):FireServer(false)
 end)
 
 Android:Button("Medkit",function()
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("MedKit")
+remotes:WaitForChild("GiveTool"):FireServer("MedKit")
 end)
 
 Android:Button("Linked Sword",function()
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("LinkedSword")
+remotes:WaitForChild("GiveTool"):FireServer("LinkedSword")
 end)
 
 Android:Button("TeddyBloxpin",function()
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("TeddyBloxpin")
+remotes:WaitForChild("GiveTool"):FireServer("TeddyBloxpin")
 end)
 
 Android:Button("Baseball Bat",function()
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Bat")
+remotes:WaitForChild("GiveTool"):FireServer("Bat")
 end)
 
 Android:Button("Basement Key",function()
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Key")
+remotes:WaitForChild("GiveTool"):FireServer("Key")
 end)
 
 Android:Button("Chips",function()
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Chips")
+remotes:WaitForChild("GiveTool"):FireServer("Chips")
 end)
 
 Android:Button("Cookie",function()
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Cookie")
+remotes:WaitForChild("GiveTool"):FireServer("Cookie")
 end)
 
 Android:Button("Bloxy Cola",function()
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("BloxyCola")
+remotes:WaitForChild("GiveTool"):FireServer("BloxyCola")
 end)
 
 Android:Button("Apple",function()
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Apple")
+remotes:WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Apple")
 end)
 
 Android:Button("Lollipop",function()
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Lollipop")
+remotes:WaitForChild("GiveTool"):FireServer("Lollipop")
 end)
 
 Android:Button("Cure",function()
