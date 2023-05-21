@@ -11,6 +11,14 @@ Android:Button("Medkit",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("MedKit")
 end)
 
+Android:Button("Linked Sword",function()
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("LinkedSword")
+end)
+
+Android:Button("TeddyBloxpin",function()
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("TeddyBloxpin")
+end)
+
 Android:Button("Baseball Bat",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Bat")
 end)
@@ -23,8 +31,20 @@ Android:Button("Chips",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Chips")
 end)
 
+Android:Button("Cookie",function()
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Cookie")
+end)
+
+Android:Button("Bloxy Cola",function()
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("BloxyCola")
+end)
+
 Android:Button("Apple",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Apple")
+end)
+
+Android:Button("Lollipop",function()
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Lollipop")
 end)
 
 Android:Button("Cure",function()
