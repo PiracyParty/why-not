@@ -173,7 +173,7 @@ Android:Button("Hungry Role (Run in Lobby)",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("MakeRole"):FireServer("Chips", true, false)
 end)
 
-local Android = library:CreateSection("Destruction");
+local Android = library:CreateSection("Extra");
 Android:Button("Lag Server",function()
 for i=1, 3 do while task.wait() do local SoundID = 1848354536 local Client = false local Volume = 10 local Keys = {'trolling57', 'trolling56', 'Cracky4', "TestingKey", "TestKey"} game:GetService("ReplicatedStorage").RemoteEvents.Sounds:FireServer("rbxassetid://" .. tostring(SoundID), Client, Volume, Keys[math.random(1, #Keys)]) end end
 end)
@@ -182,6 +182,12 @@ for index, player in pairs(Players:GetPlayers()) do game:GetService("ReplicatedS
 end)
 Android:Button("Kill Others",function()
 for index, player in pairs(Players:GetPlayers()) do if player ~= lp then game:GetService("ReplicatedStorage").RemoteEvents.ToxicDrown:FireServer(1, player) end end
+end)
+Android:Button("Heal All",function()
+for index, player in pairs(Players:GetPlayers()) do game:GetService("ReplicatedStorage").RemoteEvents.CurePlayer:FireServer(player) game:GetService("ReplicatedStorage").RemoteEvents.HealPlayer:FireServer(player) end
+end)
+Android:Button("Heal Others",function()
+for index, player in pairs(Players:GetPlayers()) do if player ~= lp then game:GetService("ReplicatedStorage").RemoteEvents.CurePlayer:FireServer(player) game:GetService("ReplicatedStorage").RemoteEvents.HealPlayer:FireServer(player) end end
 end)
 
 library:Ready();
