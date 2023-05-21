@@ -26,6 +26,10 @@ Android:Button("Apple",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Apple")
 end)
 
+Android:Button("Cure",function()
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Cure")
+end)
+
 Android:Button("Small Pizza",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Pizza1")
 end)
@@ -131,19 +135,24 @@ Android:Button("TV Skip",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("SkipTele"):FireServer()
 end)
 
+Android:Button("Befriend Cat",function()
+game:GetService("ReplicatedStorage").RemoteEvents.Catteryt:FireServer()
+end)
+
 Android:Button("Win Planks Event",function()
 for i=1, 600 do game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("makePlank"):FireServer(CFrame.new(-69.1567307, 25.2143764, -226.463501, -1, 6.67144491e-08, -7.14325523e-08, -8.74227766e-08, -0.2836622, 0.958924294, 4.37113883e-08, 0.958924294, 0.2836622), workspace:WaitForChild("TheHouse"):WaitForChild("Part")) end
 end)
 
+Android:Button("Size Switcher (Run in Lobby)",function()
+while wait() do game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("MakeRole"):FireServer(nil, false, false) task.wait(0.35) game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("MakeRole"):FireServer("Chips", true, false) end
+end)
+
+local Android = library:CreateSection("Roles");
 Android:Button("No Role (Run in Lobby)",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("MakeRole"):FireServer(nil, false, false)
 end)
 
 Android:Button("Hungry Role (Run in Lobby)",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("MakeRole"):FireServer("Chips", true, false)
-end)
-
-Android:Button("Size Switcher (Run in Lobby)",function()
-while wait() do game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("MakeRole"):FireServer(nil, false, false) task.wait(0.35) game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("MakeRole"):FireServer("Chips", true, false) end
 end)
 library:Ready();
