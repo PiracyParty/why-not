@@ -1,5 +1,6 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PiracyParty/why-not/main/GUI.lua"))();
-
+local Players = game:GetService("Players")
+local lp = Players.LocalPlayer
 local Android = library:CreateSection("Items");
 
 Android:Button("Weapon",function()
@@ -105,10 +106,6 @@ local Keys = {'trolling57', 'trolling56', 'Cracky4', "TestingKey", "TestKey"}
 game:GetService("ReplicatedStorage").RemoteEvents.Sounds:FireServer("rbxassetid://" .. tostring(SoundID), Client, Volume, Keys[math.random(1, #Keys)])
 end)
 
-Android:Button("Lag Server",function()
-for i=1, 3 do while task.wait() do local SoundID = 1848354536 local Client = false local Volume = 10 local Keys = {'trolling57', 'trolling56', 'Cracky4', "TestingKey", "TestKey"} game:GetService("ReplicatedStorage").RemoteEvents.Sounds:FireServer("rbxassetid://" .. tostring(SoundID), Client, Volume, Keys[math.random(1, #Keys)]) end end
-end)
-
 local Android = library:CreateSection("Misc");
 
 Android:Button("Lose Energy",function()
@@ -155,4 +152,16 @@ end)
 Android:Button("Hungry Role (Run in Lobby)",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("MakeRole"):FireServer("Chips", true, false)
 end)
+
+local Android = library:CreateSection("Destruction");
+Android:Button("Lag Server",function()
+for i=1, 3 do while task.wait() do local SoundID = 1848354536 local Client = false local Volume = 10 local Keys = {'trolling57', 'trolling56', 'Cracky4', "TestingKey", "TestKey"} game:GetService("ReplicatedStorage").RemoteEvents.Sounds:FireServer("rbxassetid://" .. tostring(SoundID), Client, Volume, Keys[math.random(1, #Keys)]) end end
+end)
+Android:Button("Kill All",function()
+for index, player in pairs(Players:GetPlayers()) do game:GetService("ReplicatedStorage").RemoteEvents.ToxicDrown:FireServer(1, player) end
+end)
+Android:Button("Kill Others",function()
+for index, player in pairs(Players:GetPlayers()) do if player ~= lp then game:GetService("ReplicatedStorage").RemoteEvents.ToxicDrown:FireServer(1, player) end end
+end)
+
 library:Ready();
