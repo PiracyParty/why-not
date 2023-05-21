@@ -76,14 +76,34 @@ game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("
 end
 end)
 
+Android:Button("Play Raining Tacos",function()
+local SoundID = 142376088
+local Client = false
+local Volume = 10
+local Keys = {'trolling57', 'trolling56', 'Cracky4', "TestingKey", "TestKey"}
+game:GetService("ReplicatedStorage").RemoteEvents.Sounds:FireServer("rbxassetid://" .. tostring(SoundID), Client, Volume, Keys[math.random(1, #Keys)])
+end)
+
+Android:Button("Lag Server",function()
+for i=1, 3 do while task.wait() do local SoundID = 1848354536 local Client = false local Volume = 10 local Keys = {'trolling57', 'trolling56', 'Cracky4', "TestingKey", "TestKey"} game:GetService("ReplicatedStorage").RemoteEvents.Sounds:FireServer("rbxassetid://" .. tostring(SoundID), Client, Volume, Keys[math.random(1, #Keys)]) end end
+end)
+
 local Android = library:CreateSection("Misc");
 
 Android:Button("Lose Energy",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Energy"):FireServer(-10)
 end)
 
+Android:Button("Get Energy",function()
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Apple") game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Energy"):FireServer(15, "Apple")
+end)
+
 Android:Button("Unlock Basement",function()
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Key") game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Door"):FireServer("Basement")
+end)
+
+Android:Button("Unlock Attic",function()
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Door"):FireServer("Attic")
 end)
 
 Android:Button("Force Complete Loading Screen",function()
