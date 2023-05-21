@@ -84,6 +84,23 @@ local Keys = {'trolling57', 'trolling56', 'Cracky4', "TestingKey", "TestKey"}
 game:GetService("ReplicatedStorage").RemoteEvents.Sounds:FireServer("rbxassetid://" .. tostring(SoundID), Client, Volume, Keys[math.random(1, #Keys)])
 end)
 
+
+Android:Button("Play Life in an Elevator",function()
+local SoundID = 1841647093
+local Client = false
+local Volume = 10
+local Keys = {'trolling57', 'trolling56', 'Cracky4', "TestingKey", "TestKey"}
+game:GetService("ReplicatedStorage").RemoteEvents.Sounds:FireServer("rbxassetid://" .. tostring(SoundID), Client, Volume, Keys[math.random(1, #Keys)])
+end)
+
+Android:Button("Play Relaxed Scene",function()
+local SoundID = 1848354536
+local Client = false
+local Volume = 10
+local Keys = {'trolling57', 'trolling56', 'Cracky4', "TestingKey", "TestKey"}
+game:GetService("ReplicatedStorage").RemoteEvents.Sounds:FireServer("rbxassetid://" .. tostring(SoundID), Client, Volume, Keys[math.random(1, #Keys)])
+end)
+
 Android:Button("Lag Server",function()
 for i=1, 3 do while task.wait() do local SoundID = 1848354536 local Client = false local Volume = 10 local Keys = {'trolling57', 'trolling56', 'Cracky4', "TestingKey", "TestKey"} game:GetService("ReplicatedStorage").RemoteEvents.Sounds:FireServer("rbxassetid://" .. tostring(SoundID), Client, Volume, Keys[math.random(1, #Keys)]) end end
 end)
