@@ -1,2 +1,2 @@
 Break In GUI made by Piracy and Lava
-GUI by Aztup.
+UI made by Aztup.
