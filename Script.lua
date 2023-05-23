@@ -1,3 +1,4 @@
+local whitelisted = {}
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PiracyParty/why-not/main/GUI.lua"))();
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -37,12 +38,16 @@ Android:Button("Cookie",function()
 remotes:WaitForChild("GiveTool"):FireServer("Cookie")
 end)
 
+Android:Button("Pie Slice",function()
+remotes:WaitForChild("GiveTool"):FireServer("Pie")
+end)
+
 Android:Button("Bloxy Cola",function()
 remotes:WaitForChild("GiveTool"):FireServer("BloxyCola")
 end)
 
 Android:Button("Apple",function()
-remotes:WaitForChild("RemoteEvents"):WaitForChild("GiveTool"):FireServer("Apple")
+remotes:WaitForChild("GiveTool"):FireServer("Apple")
 end)
 
 Android:Button("Lollipop",function()
@@ -158,8 +163,16 @@ Android:Button("Befriend Cat",function()
 game:GetService("ReplicatedStorage").RemoteEvents.Catteryt:FireServer()
 end)
 
+Android:Button("Loop Open/Close Attic",function()
+while task.wait() do game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Door"):FireServer("Attic") end
+end)
+
 Android:Button("Win Planks Event",function()
 for i=1, 600 do game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("makePlank"):FireServer(CFrame.new(-69.1567307, 25.2143764, -226.463501, -1, 6.67144491e-08, -7.14325523e-08, -8.74227766e-08, -0.2836622, 0.958924294, 4.37113883e-08, 0.958924294, 0.2836622), workspace:WaitForChild("TheHouse"):WaitForChild("Part")) end
+end)
+
+Android:Button("Transparency Flash",function()
+while task.wait() do game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("MakeStealth"):FireServer(1) end
 end)
 
 Android:Button("Size Switcher (Run in Lobby)",function()
@@ -190,6 +203,38 @@ for index, player in pairs(Players:GetPlayers()) do game:GetService("ReplicatedS
 end)
 Android:Button("Heal Others",function()
 for index, player in pairs(Players:GetPlayers()) do if player ~= lp then game:GetService("ReplicatedStorage").RemoteEvents.CurePlayer:FireServer(player) game:GetService("ReplicatedStorage").RemoteEvents.HealPlayer:FireServer(player) end end
+end)
+
+Android:Button("Kill Aura",function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+local detectionRange = 25
+local function isPlayerInRange(otherPlayer)
+    local otherCharacter = otherPlayer.Character
+    if otherCharacter then
+        local otherRootPart = otherCharacter:FindFirstChild("HumanoidRootPart")
+        if otherRootPart then
+            local distance = (otherRootPart.Position - humanoidRootPart.Position).Magnitude
+            return distance <= detectionRange
+        end
+    end
+    return false
+end
+local function checkNearbyPlayers()
+    for _, otherPlayer in ipairs(game.Players:GetPlayers()) do
+        if otherPlayer ~= player then
+            if isPlayerInRange(otherPlayer) then
+                -- Player detected within range
+                print(otherPlayer.Name .. " is within range!")
+                game:GetService("ReplicatedStorage").RemoteEvents.ToxicDrown:FireServer(1, otherPlayer)
+            end
+        end
+    end
+end
+while wait(1) do
+    checkNearbyPlayers()
+end
 end)
 
 library:Ready();
